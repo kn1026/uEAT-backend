@@ -249,7 +249,7 @@ app.post('/card', (req, res) => {
 
     var id = req.body.cus_id
     var source = req.body.source
-    
+
     stripe.customers.createSource(
       id,
       { source: source },
@@ -272,9 +272,7 @@ app.post('/method_card', (req, res) => {
     var id = req.body.cus_id
     var source = req.body.source
 
-    console.log(id, source)
-
-    stripe.paymentMethods.attach(source, {customer: id}, function(err, paymentMethod) {
+    stripe.paymentMethods.attach("pm_1FbgTKJipU4QHqNkYenGK2fZ", {customer: "us_G7n2SkarRJCrrP"}, function(err, paymentMethod) {
           // asynchronously called
           if(err != null) {
             console.log(err)
