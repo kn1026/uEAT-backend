@@ -267,22 +267,6 @@ app.post('/card', (req, res) => {
 
 });
 
-app.post('/method_card', (req, res) => {
-
-    var id = req.body.cus_id
-    var source = req.body.source
-
-    stripe.paymentMethods.attach(source, {customer: id}, function(err, paymentMethod) {
-          // asynchronously called
-          if(err != null) {
-            console.log(err.statusCode)
-          }
-          console.log(paymentMethod.statusCode)
-
-          res.send(paymentMethod)
-    });
-
-});
 
 app.post('/default_card', (req, res) => {
 
