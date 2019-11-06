@@ -250,9 +250,13 @@ app.post('/card', (req, res) => {
     var id = req.body.cus_id
     var source = req.body.source
 
-    stripe.customers.createSource(
+    console.log(id, source)
+
+    stripe.Customer.create_source(
       id,
-      { source: source },
+      {
+        source: source
+      },
       function(err, card) {
         if(err != null) {
 
