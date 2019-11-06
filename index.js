@@ -274,11 +274,8 @@ app.post('/method_card', (req, res) => {
     stripe.paymentMethods.attach(source, {customer: id}, function(err, paymentMethod) {
           // asynchronously called
           if(err != null) {
-
             console.log(err)
-
           }
-
           console.log(paymentMethod)
 
           res.send(paymentMethod)
