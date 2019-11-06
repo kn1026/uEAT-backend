@@ -206,7 +206,6 @@ app.post('/customers_card', (req, res) => {
 
     var id = req.body.cus_id
 
-
     stripe.customers.listCards(id, function(err, cards) {
 
       if(err != null) {
