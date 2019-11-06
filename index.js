@@ -272,7 +272,7 @@ app.post('/method_card', (req, res) => {
     var id = req.body.cus_id
     var source = req.body.source
 
-    stripe.paymentMethods.attach("pm_1FbgTKJipU4QHqNkYenGK2fZ", {customer: "us_G7n2SkarRJCrrP"}, function(err, paymentMethod) {
+    stripe.paymentMethods.attach(source, {customer: id}, function(err, paymentMethod) {
           // asynchronously called
           if(err != null) {
             console.log(err.statusCode)
