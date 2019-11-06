@@ -251,7 +251,7 @@ app.post('/card', (req, res) => {
     var source = req.body.source
 
 
-    stripe.Customer.create_source(
+    stripe.customers.createSource(
       id,
       {
         source: source
