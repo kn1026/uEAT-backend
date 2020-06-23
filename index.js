@@ -705,6 +705,8 @@ app.post('/sms_noti', (req, res) => {
     var phone = req.body.phone
     var body = req.body.body
 
+    console.log(phone, body)
+
     client.messages.create({
 
         to: phone,
