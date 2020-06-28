@@ -721,7 +721,7 @@ app.post('/sms_noti', (req, res) => {
 app.post('/sms', (req, res) => {
   const twiml = new MessagingResponse();
 
-  twiml.message('Your driver is comming, be ready');
+  twiml.message('Thank you for contacting us');
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
